@@ -1,6 +1,7 @@
 # Mall Customer Segmentation Using K-Means Clustering
 ## Executive Summary
 This project **applies K-Means clustering** to segment mall customers into distinct groups based on their behavioural characteristics. Two clustering models were developed: an initial model based on `annual income` and `spending score`, and an extended model incorporating `age` as a third dimension. The resulting segments are profiled and interpreted to support the development of targeted marketing strategies.
+![3D scatter plot of customer clusters based on age, annual income, and spending score](https://github.com/nkorlov-data/Mall-Customer-Segmentation-Clustering/blob/main/images/age_income_spending_clusters_3d.png)
 ## Business Problem
 Customers with different income and spending habits usually need different marketing approaches. The marketing team needs to answer questions like:
 - Which customers are the most valuable to the business?
@@ -49,27 +50,24 @@ Before building the clustering models, the dataset was explored to better unders
 No missing values or duplicate records were found. The `CustomerID` column was dropped, as it does not contribute to the clustering process.
 ### Gender Distribution
 The dataset is slightly skewed toward female customers, though not to a degree that raises concern for the analysis.
-(insert gender distribution chart here)
-### Income vs Spending Score
+![Bar chart showing the number of male and female customers in the dataset](https://github.com/nkorlov-data/Mall-Customer-Segmentation-Clustering/blob/main/images/gender_distribution.png)
+### Income and Spending Score
 Plotting annual income against spending score reveals several naturally occurring customer groups, visible even prior to applying any clustering algorithm. This pattern was the primary motivation for selecting K-Means as the modelling approach.
-(insert income vs spending score scatterplot here)
-### Correlation Between Variables
-No strong linear correlation was observed between age, annual income, and spending score. This suggests that spending behaviour cannot be reliably inferred from age or income in isolation, reinforcing the case for a clustering-based approach over a simpler rule-based segmentation.
-(insert correlation heatmap here)
+![Scatter plot of annual income versus spending score showing natural groupings in the data](https://github.com/nkorlov-data/Mall-Customer-Segmentation-Clustering/blob/main/images/income_spending_scatter.png)
 ## Building the Model
 ### Income & Spending Score (k = 5)
 The optimal number of clusters was determined using the **Elbow Method**. The resulting curve flattens noticeably at k = 5, indicating that five clusters provide an appropriate balance between model simplicity and explanatory power.
 A K-Means model was then trained using `Annual Income` and `Spending Score` as input features, assigning each customer to one of five clusters.
-(insert 2D cluster scatterplot with cluster centres here)
+![Scatter plot of customer clusters based on annual income and spending score, with cluster centers marked](https://github.com/nkorlov-data/Mall-Customer-Segmentation-Clustering/blob/main/images/income_spending_clusters.png)
 A crosstab of cluster assignment against gender was reviewed to check whether any segment was disproportionately associated with a particular gender. No substantial imbalance was observed, suggesting that these clusters are driven primarily by income and spending behaviour rather than gender.
 ### Age, Income & Spending Score (k = 6)
 To assess whether age meaningfully refines the segmentation, a second model was trained using `Age`, `Annual Income`, and `Spending Score` together. The Elbow Method was applied again, this time indicating an optimal value of k = 6.
 A K-Means model was trained on all three features and visualised using a three-dimensional scatter plot.
-(insert 3D cluster scatterplot here)
+![3D scatter plot of customer clusters based on age, annual income, and spending score](https://github.com/nkorlov-data/Mall-Customer-Segmentation-Clustering/blob/main/images/age_income_spending_clusters_3d.png)
 The inclusion of age introduces additional separation within the data, particularly between younger, high-spending customers and older customers with comparable income but lower spending levels.
 ## Results
 The mean values of Age, Annual Income, and Spending Score were calculated for each of the six clusters to profile their characteristics. These profiles were then used to assign each segment a descriptive, behaviour-based name.
-(insert picture of frame of means)
+![Table showing average age, annual income, and spending score for each named customer segment](https://github.com/nkorlov-data/Mall-Customer-Segmentation-Clustering/blob/main/images/cluster_profiles_table.png)
 A normalised crosstab (percentage by row) was used to compare segment composition across genders. Minor variation was observed, but not to an extent that would justify treating gender as a primary driver of segmentation.
 ## Business Insights & Recommendations
 ### VIP Customers & Young Professionals
