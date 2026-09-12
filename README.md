@@ -9,13 +9,13 @@ Customers with different income and spending habits usually need different marke
 - Which customers require a different marketing approach altogether?
 - Does age meaningfully change how customers should be grouped?
 
-Rather than applying a single marketing strategy across the entire customer base, segmentation allows a business to group customers with similar characteristics and design targeted campaigns accordingly. This can improve customer retention, increase the effectiveness of promotional spend, and support more informed business decisions.
+Rather than applying a single marketing strategy across the entire customer base, segmentation **allows a business to group customers with similar characteristics and design targeted campaigns accordingly**. This can improve customer retention, increase the effectiveness of promotional spend, and support more informed business decisions.
 
 In this project, K-Means clustering is used to identify meaningful customer segments based on `annual income`, `spending score`, and `age`.
 ## Dataset
 This project uses the publicly available Mall Customer Segmentation Dataset from Kaggle.
 
-For licensing reasons, the dataset is not included in this repository. Please download it from the link below and place `Mall_Customers.csv` in the project's root directory, or update the file path in the notebook accordingly.
+For licensing reasons, the **dataset is not included in this repository**. Please download it from the link below and place `Mall_Customers.csv` in the project's root directory, or update the file path in the notebook accordingly.
 
 Dataset: https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python
 
@@ -83,13 +83,13 @@ Despite comparatively lower income, this segment spends actively, suggesting str
 - Rewards or cashback programmes
 - Trend-focused promotional campaigns
 ### Prudent Investors
-This segment has high income but low spending, indicating unrealised purchasing potential.
+This segment has high income but low spending, indicating unrealised purchasing potential.  
 **Potential actions:**
 - Personalised promotions
 - Customer surveys to identify purchasing barriers
 - Exclusive, income-appropriate offers
 ### Steady Customers & Classic Shoppers
-These segments represent a stable but lower-priority portion of the customer base.
+These segments represent a stable but lower-priority portion of the customer base.  
 **Potential actions:**
 - Seasonal promotions
 - Basic loyalty incentives
